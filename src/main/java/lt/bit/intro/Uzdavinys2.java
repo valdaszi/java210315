@@ -1,4 +1,4 @@
-/*
+package lt.bit.intro;/*
     Parašykite programą, kuri mokėtų suapvalinti double tipo skaičius pagal
     nurodytą tikslumą. Panaudokite matematinę funkciją Math.floor(…)
 
@@ -40,7 +40,7 @@ public class Uzdavinys2 {
     // 1. a * 0.1 = 1.55...
     // 2. a -> ~ 2.0
     // 3. a / 0.1 = 20.0
-    static double apvalinti(double d, int tikslumas) {
+    public static double apvalinti(double d, int tikslumas) {
         if (tikslumas == 0) return Math.floor(d + 0.5);
         double x = Math.pow(10.0, tikslumas);
         return Math.floor(d * x + 0.5) / x;

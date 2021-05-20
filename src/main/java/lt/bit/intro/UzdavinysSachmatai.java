@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 import java.math.BigInteger;
 
 public class UzdavinysSachmatai {

@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 import java.util.Arrays;
 import java.util.Scanner;
 

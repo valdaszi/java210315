@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 import javax.swing.*;
 
 public class Mokykla {

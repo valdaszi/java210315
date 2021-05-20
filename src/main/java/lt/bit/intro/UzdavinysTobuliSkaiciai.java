@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 public class UzdavinysTobuliSkaiciai {
 
     public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 public class KlasesDemo {
 
     public static void main(String[] args) {

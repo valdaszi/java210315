@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 public class Mokinys extends Zmogus {
     private int klase;  // 0..12
     private String numeris;  // a, b, c

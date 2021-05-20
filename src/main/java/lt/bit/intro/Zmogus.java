@@ -1,3 +1,5 @@
+package lt.bit.intro;
+
 public class Zmogus extends Object {
     private String vardas;
     private String pavarde;
