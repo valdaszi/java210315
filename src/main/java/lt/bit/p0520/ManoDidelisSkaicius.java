@@ -33,8 +33,24 @@ public class ManoDidelisSkaicius {
     // [0] = 4 [1] = 8 [2] = 2 [3] = 0 ...
     // -----------------------------------
     // [0] = 2 [1] = 5 [2] = 7 [3] = 0 ...
+
+    //
+    // 1234
+    //   28
+    // ----
+    // ..52
+    // 1) 28 * 4 = 112 -> 2 (11)
+    // 2) 28 * 3 + 11 = 95 -> 5 (9)
     public ManoDidelisSkaicius multiply(int x) {
-        //TODO daugyba
+        int mintyje = 0;
+        for (int index = 0; index < skaitmenys.length; index++) {
+            int sandauga = mintyje + skaitmenys[index] * x;
+            skaitmenys[index] = (byte) (sandauga % 10);
+            mintyje = sandauga / 10;
+        }
+        if (mintyje > 0) {
+            System.err.println("Klaida - gaunasi per didelis skaicius");
+        }
         return this;
     }
 
@@ -44,8 +60,32 @@ public class ManoDidelisSkaicius {
     // [0] = 7 [1] = 6 [2] = 0 [3] = 0 ...
     // -----------------------------------
     // [0] = 1 [1] = 5 [2] = 3 [3] = 0 ...
+
+    //  1
+    // 996
+    // 108
+    // ---
+    //  04
+
+    // Jei suma <  10 tai mintyje = 0; skaitmenys[index] = suma;
+    // Jei suma >= 10 tai mintyje = ?; skaitmenys[index] = ?
     public ManoDidelisSkaicius add(ManoDidelisSkaicius x) {
-        //TODO sudetis
+        int mintyje = 0;
+        for (int index = 0; index < skaitmenys.length; index++) {
+             int suma = mintyje + skaitmenys[index] + x.skaitmenys[index];
+//             if (suma < 10) {
+//                 mintyje = 0;
+//                 skaitmenys[index] = (byte) suma;
+//             } else {
+//                 mintyje = 1;
+//                 skaitmenys[index] = (byte) (suma - 10);
+//             }
+             skaitmenys[index] = (byte) (suma % 10);
+             mintyje = suma / 10;
+        }
+        if (mintyje > 0) {
+            System.err.println("Klaida - gaunasi per didelis skaicius");
+        }
         return this;
     }
 
