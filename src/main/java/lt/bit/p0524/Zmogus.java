@@ -33,9 +33,13 @@ public class Zmogus extends Object {
 
     @Override
     public boolean equals(Object o) {
+        // if (o == null) return false;
         if (!(o instanceof Zmogus)) return false;
         Zmogus z = (Zmogus) o;
-        return this.name.equals(z.name) && this.email.equals(z.email);
+        return this.name != null && z.name != null &&
+                this.name.trim().equalsIgnoreCase(z.name.trim()) &&
+                this.email != null && z.email != null &&
+                this.email.trim().equalsIgnoreCase(z.email.trim());
     }
 
 }
