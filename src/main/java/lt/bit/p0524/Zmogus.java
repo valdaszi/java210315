@@ -1,13 +1,27 @@
 package lt.bit.p0524;
 
+import java.time.LocalDate;
+import java.util.Locale;
+import java.util.Objects;
+
 public class Zmogus extends Object {
 
     private String name;
     private String email;
 
+    public static Zmogus createFromNameAndEmail(String name, String email) {
+        Zmogus z = new Zmogus(name, email);
+        return z;
+    }
+
     public Zmogus(String name, String email) {
         this.name = name;
         this.email = email;
+
+    }
+
+    public Zmogus(String name, String email, LocalDate birthday) {
+        this(name, email);
     }
 
     public String getName() {
@@ -36,10 +50,22 @@ public class Zmogus extends Object {
         // if (o == null) return false;
         if (!(o instanceof Zmogus)) return false;
         Zmogus z = (Zmogus) o;
-        return this.name != null && z.name != null &&
-                this.name.trim().equalsIgnoreCase(z.name.trim()) &&
-                this.email != null && z.email != null &&
-                this.email.trim().equalsIgnoreCase(z.email.trim());
+
+        return
+                Objects.equals(
+                        this.name == null ? "" : this.name.trim().toLowerCase().replaceAll("\\s+", " "),
+                        z.name == null ? "" : z.name.trim().toLowerCase().replaceAll("\\s+", " ")) &&
+                Objects.equals(
+                        this.email == null ? "" : this.email.trim().toLowerCase(),
+                        z.email == null ? "" : z.email.trim().toLowerCase());
+
+//        return this.name != null && z.name != null &&
+//                this.name.trim().equalsIgnoreCase(z.name.trim()) &&
+//                this.email != null && z.email != null &&
+//                this.email.trim().equalsIgnoreCase(z.email.trim());
     }
 
+    public int age(LocalDate date) {
+        return 0;
+    }
 }
