@@ -1,5 +1,8 @@
 package lt.bit.p0526;
 
+/**
+ * Akmenys naudojami musu 3D simuliacijoje
+ */
 public class Stone implements IColor {
 
     private String color;

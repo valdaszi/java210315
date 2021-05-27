@@ -1,13 +1,14 @@
 package lt.bit.p0524;
 
 import java.time.LocalDate;
-import java.util.Locale;
+import java.time.Period;
 import java.util.Objects;
 
 public class Zmogus extends Object {
 
     private String name;
     private String email;
+    private LocalDate birthday;
 
     public static Zmogus createFromNameAndEmail(String name, String email) {
         Zmogus z = new Zmogus(name, email);
@@ -22,6 +23,7 @@ public class Zmogus extends Object {
 
     public Zmogus(String name, String email, LocalDate birthday) {
         this(name, email);
+        this.birthday = birthday;
     }
 
     public String getName() {
@@ -66,6 +68,6 @@ public class Zmogus extends Object {
     }
 
     public int age(LocalDate date) {
-        return 0;
+        return Period.between(birthday, date).getYears();
     }
 }

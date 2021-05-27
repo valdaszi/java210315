@@ -5,6 +5,10 @@ public class Brick implements IColor, IMaterial {
     private String material;
     private String color;
 
+    /**
+     * Grazina akmens medziaga
+     * @return medziaga
+     */
     @Override
     public String getMaterial() {
         return material;
