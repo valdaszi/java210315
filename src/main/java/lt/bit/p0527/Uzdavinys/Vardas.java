@@ -2,5 +2,13 @@ package lt.bit.p0527.Uzdavinys;
 
 public interface Vardas {
 
-    String vardas();
+    abstract String vardas();
+
+    default String game() {
+        return vardas();
+    }
+
+    static String version() {
+        return "v0.1";
+    }
 }

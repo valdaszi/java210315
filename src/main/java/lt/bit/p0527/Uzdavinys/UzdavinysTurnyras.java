@@ -4,19 +4,23 @@ public class UzdavinysTurnyras {
 
     public static void main(String[] args) {
 
-        Mokinys[] mokiniai = sukurtiMokinius();
+        System.out.println(Vardas.version());
+
+        Vardas[] games = sukurtiMokinius();
+        spausdinti(0, games);
 
         int ratoNr = 1;
-        Pora[] poros = pirmasRatas(mokiniai);
-        spausdinti(ratoNr, poros);
 
-        //TODO
-
+        while (games.length >= 2) {
+            games = ratas(games);
+            spausdinti(ratoNr, games);
+            ratoNr++;
+        }
     }
 
-    private static void spausdinti(int ratoNr, Pora[] poros) {
-        System.out.println(ratoNr + " ratas:");
-        for (Pora pora : poros) {
+    private static void spausdinti(int ratoNr, Vardas[] poros) {
+        System.out.println(ratoNr == 0 ? "Zaidejai: " : (ratoNr + " ratas:"));
+        for (Vardas pora : poros) {
             System.out.println(pora.game());
         }
     }
@@ -27,18 +31,28 @@ public class UzdavinysTurnyras {
                 new Mokinys("V1", "P1"),
                 new Mokinys("V2", "P2"),
                 new Mokinys("V3", "P3"),
-                new Mokinys("V4", "P4")
+                new Mokinys("V4", "P4"),
+                new Mokinys("V5", "P5"),
+                new Mokinys("V6", "P6"),
+                new Mokinys("V7", "P7"),
+                new Mokinys("V8", "P8")
         };
     }
 
-    public static Pora[] pirmasRatas(Mokinys[] mokiniai) {
-        //TODO
-        return null;
-    }
+//    public static Pora[] pirmasRatas(Mokinys[] mokiniai) {
+//        Pora[] games = new Pora[mokiniai.length / 2];
+//        for (int i = 0; i < mokiniai.length; i += 2) {
+//            games[i / 2] = new Pora(mokiniai[i], mokiniai[i+1]);
+//        }
+//        return games;
+//    }
 
-    public static Pora[] ratas(Pora[] poros) {
-        //TODO
-        return null;
+    public static Pora[] ratas(Vardas[] poros) {
+        Pora[] games = new Pora[poros.length / 2];
+        for (int i = 0; i < poros.length; i += 2) {
+            games[i / 2] = new Pora(poros[i], poros[i+1]);
+        }
+        return games;
     }
 
 }
