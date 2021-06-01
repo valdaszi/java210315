@@ -47,10 +47,19 @@ public class UzdavinysTurnyras {
 //        return games;
 //    }
 
-    public static Pora[] ratas(Vardas[] poros) {
-        Pora[] games = new Pora[poros.length / 2];
-        for (int i = 0; i < poros.length; i += 2) {
-            games[i / 2] = new Pora(poros[i], poros[i+1]);
+
+    /*
+       2, 4, 8, 16, 32 ....
+
+       1  2  3  4  5  6  7  8
+       9 10 11 12
+       ----------------------
+       A  B  C  D  5  6  7  8
+     */
+    public static Pora[] ratas(Vardas[] zaidejai) {
+        Pora[] games = new Pora[zaidejai.length / 2];
+        for (int i = 0; i < zaidejai.length; i += 2) {
+            games[i / 2] = new Pora(zaidejai[i], zaidejai[i+1]);
         }
         return games;
     }
