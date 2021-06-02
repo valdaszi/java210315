@@ -1,4 +1,4 @@
-package lt.bit.p0531.p0601;
+package lt.bit.p0601;
 
 import java.util.Arrays;
 
