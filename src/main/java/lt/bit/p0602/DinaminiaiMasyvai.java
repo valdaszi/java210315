@@ -22,8 +22,8 @@ public class DinaminiaiMasyvai {
         for (int i = 1; i <= 1000; i++) {
             datos.add(LocalDate.now().minusDays(i));
         }
-        System.out.println(listas.get(0));
-        System.out.println(listas.get(999));
+        System.out.println(datos.get(0));
+        System.out.println(datos.get(999));
 
 
 
