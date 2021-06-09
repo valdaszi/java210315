@@ -1,9 +1,8 @@
-package lt.bit.p0607.p0608;
+package lt.bit.p0608;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 import java.util.stream.Collectors;
 
 public class CollectionDeleteDemo {

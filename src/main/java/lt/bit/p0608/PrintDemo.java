@@ -1,4 +1,4 @@
-package lt.bit.p0607.p0608;
+package lt.bit.p0608;
 
 public class PrintDemo {
 
