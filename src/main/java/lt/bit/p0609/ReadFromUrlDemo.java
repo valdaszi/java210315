@@ -19,10 +19,8 @@ public class ReadFromUrlDemo {
             try (
                 InputStream is = url.openStream();
                 InputStreamReader reader = new InputStreamReader(is);
-            ) {
-
                 Writer writer = new FileWriter("delfi.lt.html"); // UTF-8 , Charset.forName("ISO-8859-13"));
-
+            ) {
                 int input;
                 while ((input = reader.read()) != -1) {
                     writer.write(input);
